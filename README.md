@@ -18,3 +18,7 @@ git clone --single-branch --branch escalfament-js-0 https://github.com/picuu/m14
 ```
 
 - **[AEA 1.02](https://github.com/picuu/m14/tree/escalfament-js-1-todo-list)** - Escalfament JavaScript 1 ToDo List
+
+```bash
+git clone --single-branch --branch escalfament-js-1-todo-list https://github.com/picuu/m14.git
+```
