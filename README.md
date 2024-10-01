@@ -1,6 +1,4 @@
-# Repositori d'activitats i treballs del mòdul 14 - Desenvolupament d'aplicacions per entorns mòbils
-
-## Activitat AEA 1.02 - Escalfament JavaScript 1 ToDo List
+# Activitat AEA 1.02 - Escalfament JavaScript 1 ToDo List
 
 Per clonar aquesta branca del repositori, que conté l'activitat AEA 1.03, cal executar la següent comanda:
 
