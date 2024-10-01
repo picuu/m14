@@ -22,3 +22,9 @@ git clone --single-branch --branch escalfament-js-0 https://github.com/picuu/m14
 ```bash
 git clone --single-branch --branch escalfament-js-1-todo-list https://github.com/picuu/m14.git
 ```
+
+- **[AEA 1.03](https://github.com/picuu/m14/tree/aea-103-refactor-todo-list)** - Refactorització To Do List
+
+```bash
+git clone --single-branch --branch aea-103-refactor-todo-list https://github.com/picuu/m14.git
+```
