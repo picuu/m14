@@ -1,6 +1,6 @@
 # Activitat AEA 1.01 - Escalfament JavaScript 0
 
-Per clonar aquesta branca del repositori, que conté l'activitat AEA 1.03, cal executar la següent comanda:
+Per clonar aquesta branca del repositori cal executar la següent comanda:
 
 ```bash
 git clone --single-branch --branch escalfament-js-0 https://github.com/picuu/m14.git
