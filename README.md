@@ -1,8 +1,6 @@
-# Repositori d'activitats i treballs del mòdul 14 - Desenvolupament d'aplicacions per entorns mòbils
+# Activitat AEA 1.03 - Refactorització To Do List
 
-## Activitat AEA 1.03 - Refactorització To Do List
-
-Per clonar aquesta branca del repositori, que conté l'activitat AEA 1.03, cal executar la següent comanda:
+Per clonar aquesta branca del repositori cal executar la següent comanda:
 
 ```bash
 git clone --single-branch --branch aea-103-refactor-todo-list https://github.com/picuu/m14.git
