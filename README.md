@@ -1,4 +1,4 @@
-# Activitat AEA 1.00 - Conceptes bàsics Vue 3
+# Activitat - Exemples de conceptes bàsics Vue
 
 Per clonar aquesta branca del repositori cal executar la següent comanda:
 
