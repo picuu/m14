@@ -1,24 +1,26 @@
 <script setup>
-  import Counter from '@/components/ExampleRef.vue'
+  import ExampleRef from '@/components/ExampleRef.vue'
   import ExampleReactive from '@/components/ExampleReactive.vue'
   import ExampleDirective from '@/components/ExampleDirective.vue'
   import ExampleVModel from './components/ExampleVModel.vue'
   import ExampleVFor from './components/ExampleVFor.vue'
   import ExampleVIf from './components/ExampleVIf.vue'
   import ExampleVShow from './components/ExampleVShow.vue'
+  import ExampleComputed from './components/ExampleComputed.vue'
 </script>
 
 <template>
   <main>
     <h1>Basic concepts Vue 3</h1>
     
-    <Counter />
+    <ExampleRef />
     <ExampleReactive />
     <ExampleDirective />
     <ExampleVModel />
     <ExampleVFor />
     <ExampleVIf />
     <ExampleVShow />
+    <ExampleComputed />
   </main>
 </template>
 
@@ -39,15 +41,6 @@
     font-family:
       Inter,
       system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      'Fira Sans',
-      'Droid Sans',
       'Helvetica Neue',
       sans-serif;
     font-size: 15px;
