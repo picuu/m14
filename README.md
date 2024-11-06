@@ -52,3 +52,9 @@ git clone --single-branch --branch cb-carlosCapo https://github.com/picuu/m14.gi
 ```bash
 git clone --single-branch --branch pr01-contact-form https://github.com/picuu/m14.git
 ```
+
+- **[PR 02](https://github.com/picuu/m14/tree/pr02-chat)** - Creació d'un xat
+
+```bash
+git clone --single-branch --branch pr02-chat https://github.com/picuu/m14.git
+```
