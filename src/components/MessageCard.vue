@@ -11,7 +11,7 @@ let isMessageRead = false
 
 const formatedDate = computed(() => {
   const date = new Date(props.message.createdAt)
-  return date.toLocaleTimeString().slice(0, -3)
+  return date.toLocaleTimeString("es").slice(0, -3)
 })
 </script>
 
