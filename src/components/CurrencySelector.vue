@@ -7,7 +7,7 @@ const currency = inject('currency')
 <template>
   <form @submit.prevent>
     <label class="custom-selector">
-      <span>Currency</span>
+      <span>Moneda</span>
       <select v-model="currency">
         <option selected value="EUR">EUR</option>
         <option value="USD">USD</option>

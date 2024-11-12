@@ -8,7 +8,7 @@ const { products } = defineProps({
 
 <template>
   <section>
-    <h2>Available products</h2>
+    <h2>MENÚS BURGER</h2>
 
     <div class="product-list" role="list">
       <ProductCard
