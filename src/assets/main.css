@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background-color: #fff;
+  color: #111;
+}
+
+body,
+input,
+textarea,
+button,
+select,
+option {
+  font-family: Inter, system-ui, 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
