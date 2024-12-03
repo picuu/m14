@@ -1,11 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
+const router = useRouter()
+
+const goToAbout = () => {
+  router.push('/about')
+}
 </script>
 
 <template>
   <header>
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/about">Go to About</RouterLink>
+    <button @click="goToAbout">Go to About without RouterLink</button>
   </header>
 
   <main>
