@@ -13,6 +13,7 @@ const goToAbout = () => {
     <RouterLink to="/about">Go to About</RouterLink>
     <button @click="goToAbout">Go to About without RouterLink</button>
     <RouterLink to="/computed">Go to Computed View</RouterLink>
+    <RouterLink to="/route">Go to Route Example View</RouterLink>
   </header>
 
   <main>

@@ -18,6 +18,19 @@ const router = createRouter({
       path: '/computed',
       name: 'Computed',
       component: () => import('@/views/ComputedView.vue')
+    },
+    {
+      path: '/route',
+      name: 'Route',
+      component: () => import('@/views/RouteExampleView.vue'),
+      children: [
+        {
+          path: 'desti/:id',
+          name: 'desti',
+          component: () => import('@/views/DestiView.vue'),
+          props: (route) => ({ ...route.params, id: parseInt(route.params.id) })
+        }
+      ]
     }
   ]
 })
