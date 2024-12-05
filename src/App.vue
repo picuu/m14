@@ -1,9 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import HeaderApp from '@/components/HeaderApp.vue'
 </script>
 
 <template>
-  <main>
+  <HeaderApp />
+
+  <main class="container">
     <RouterView />
   </main>
 </template>

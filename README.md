@@ -3,7 +3,7 @@
 Per clonar aquesta branca del repositori cal executar la següent comanda:
 
 ```bash
-git clone --single-branch --branch pr04-router-web https://github.com/picuu/m14.git
+git clone --single-branch --branch pr04-router-carlos_capo https://github.com/picuu/m14.git
 ```
 
 ## Com accedir a les activitats?
