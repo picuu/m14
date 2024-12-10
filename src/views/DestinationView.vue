@@ -2,17 +2,19 @@
 import { computed } from 'vue'
 import { getDestination } from '@/services/destinations'
 import DestinationExperiences from '@/components/DestinationExperiences.vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const { id } = defineProps({
   id: Number
 })
 
 const router = useRouter()
+const route = useRoute()
 const destination = computed(() => getDestination(id))
 
 const handleGoBack = () => {
-  router.back()
+  if (route.name === 'destination') router.push('/')
+  else router.push(`/destination/${id}`)
 }
 </script>
 

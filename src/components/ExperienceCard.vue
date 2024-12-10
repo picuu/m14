@@ -13,7 +13,7 @@ const { id, name, image } = defineProps({
   <article class="card">
     <RouterLink :to="`/destination/${destinationId}/experience/${expSlug}`">
       <img :src="`/images/${image}`" :alt="name" />
-      <h2 class="card__text">{{ name }}</h2>
+      <h3 class="card__text">{{ name }}</h3>
     </RouterLink>
   </article>
 </template>

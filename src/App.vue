@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import HeaderApp from '@/components/HeaderApp.vue'
 </script>
 
@@ -23,6 +23,6 @@ import HeaderApp from '@/components/HeaderApp.vue'
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  opacity: 0.5;
 }
 </style>
