@@ -1,0 +1,41 @@
+{
+  "name": "aea-03-activitat02-api-rest",
+  "version": "1.0.0",
+  "description": "node.js api rest with express",
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "standard": "^17.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picuu/m14.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "api",
+    "api-rest"
+  ],
+  "author": "picuu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/picuu/m14/issues"
+  },
+  "homepage": "https://github.com/picuu/m14#readme",
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2"
+  }
+}

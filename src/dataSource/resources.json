@@ -1,0 +1,14 @@
+[
+  {
+    "id": "101",
+    "name": "Sala de reunions A",
+    "type": "sala",
+    "ubication": "Planta 1, Edifici B",
+    "description": "Sala equipada amb projector i capacitat per a 10 persones",
+    "state": "disponible",
+    "properties": {
+      "capacity": 10,
+      "equipment": ["projector", "pissarra"]
+    }
+  }
+]
