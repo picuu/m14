@@ -1,9 +1,14 @@
 import { groupBy, orderBy } from "lodash"
-import { defineStore } from "pinia"
+import { acceptHMRUpdate, defineStore } from "pinia"
 import { computed, ref } from "vue"
+import { useAuthUserStore } from "./useAuthUserStore"
+import { useLocalStorage } from "@vueuse/core"
+
+const options = { historyEnabled: true }
 
 export const useCartStore = defineStore('CartStore', () => {
-  const items = ref([])
+  // const items = ref([])
+  const items = ref(useLocalStorage('CartStore:items', []))
 
   const amount = computed(() => items.value.length)
   const isEmpty = computed(() => amount.value === 0)
@@ -31,9 +36,18 @@ export const useCartStore = defineStore('CartStore', () => {
     addItem(count, item)
   }
 
+  const checkout = () => {
+    const authUserStore = useAuthUserStore()
+    alert(`${authUserStore.username} name just bought ${amount.value} items at a total of $${totalPrice.value}`)
+  }
+
   const $reset = () => {
     items.value = []
   }
 
-  return { items, amount, isEmpty, grouped, totalPrice, groupCount, addItem, clearItem, setItemCount, $reset }
-})
+  return { items, amount, isEmpty, grouped, totalPrice, groupCount, addItem, clearItem, setItemCount, checkout, $reset }
+},options)
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot))
+}

@@ -10,11 +10,29 @@ const cartStore = useCartStore()
 
 productStore.fill()
 const { products } = storeToRefs(productStore)
+
+cartStore.$onAction(({ name, args, after, onError }) => {
+  if (name === 'addItem') {
+    after(() => {
+      console.log(args[0])
+    })
+  }
+
+  onError((error) => {
+    console.error('Hello error:', error.message)
+  })
+})
 </script>
 
 <template>
   <div class="container">
     <TheHeader />
+
+    <div class="mb-5 flex justify-end">
+     <AppButton @click="cartStore.undo">Undo</AppButton>
+     <AppButton class="ml-2" @click="cartStore.redo">Redo</AppButton>
+   </div>
+    
     <ul class="sm:flex flex-wrap lg:flex-nowrap gap-5">
       <ProductCard
         v-for="product in products"
