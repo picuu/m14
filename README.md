@@ -100,3 +100,9 @@ git clone --single-branch --branch aea-112-composables https://github.com/picuu/
 ```bash
 git clone --single-branch --branch aea-03-activitat02-api-rest https://github.com/picuu/m14.git
 ```
+
+16. **[Pràctica 07](https://github.com/picuu/m14/tree/vue-laravel)** - Autenticació Vue + Laravel
+
+```bash
+git clone --single-branch --branch vue-laravel https://github.com/picuu/m14.git
+```
