@@ -5,7 +5,9 @@
       "@components": ["./src/components/index.js"],
       "@components/*": ["./src/components/*"],
       "@views": ["./src/views/index.js"],
-      "@views/*": ["./src/views/*"]
+      "@views/*": ["./src/views/*"],
+      "@composables": ["./src/composables/index.js"],
+      "@composables/*": ["./src/composables/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
