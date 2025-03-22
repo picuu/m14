@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components": ["./src/components/index.js"],
+      "@components/*": ["./src/components/*"],
+      "@views": ["./src/views/index.js"],
+      "@views/*": ["./src/views/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
