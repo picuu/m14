@@ -15,6 +15,12 @@ const router = createRouter({
       component: () => import('@views/WaterView.vue')
     },
     {
+      path: '/aigua/:station',
+      name: 'station',
+      component: () => import('@views/StationView.vue'),
+      props: (route) => ({ stationName: route.params.station })
+    },
+    {
       path: '/compra',
       name: 'compra',
       component: () => import('@views/CartView.vue')
