@@ -106,3 +106,9 @@ git clone --single-branch --branch aea-03-activitat02-api-rest https://github.co
 ```bash
 git clone --single-branch --branch vue-laravel https://github.com/picuu/m14.git
 ```
+
+17. **[Activitat repas examen](https://github.com/picuu/m14/tree/prova-examen-uf2)** - Examen 2a Convocatòria UF2
+
+```bash
+git clone --single-branch --branch prova-examen-uf2 https://github.com/picuu/m14.git
+```
