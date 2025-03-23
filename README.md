@@ -1,35 +1,13 @@
-# .
+# Activitat repas examen - Examen 2a Convocatòria UF2
 
-This template should help get you started developing with Vue 3 in Vite.
+Per clonar aquesta branca del repositori cal executar la següent comanda:
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+git clone --single-branch --branch prova-examen-uf2 https://github.com/picuu/m14.git
 ```
 
-### Compile and Hot-Reload for Development
+## Com accedir a les activitats?
 
-```sh
-npm run dev
-```
+El repositori conté una branca per cada activitat realitzada. Per accedir a les activitats, cal seleccionar la branca corresponent a l'activitat que es vol consultar.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[Enllaç a la branca principal, amb l'index complert de totes les activitats](https://github.com/picuu/m14?tab=readme-ov-file#branques-per-activitat)
