@@ -29,7 +29,8 @@ const uniqueStations = computed(() =>
 
 <style scoped>
 h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 ul {

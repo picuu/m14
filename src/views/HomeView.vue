@@ -21,4 +21,9 @@
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+</style>
