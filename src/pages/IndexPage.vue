@@ -1,13 +1,21 @@
+<script setup>
+import { StoriesHeader } from 'components'
+</script>
+
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="q-page">
+    <StoriesHeader />
+
+    <div class="main"></div>
   </q-page>
 </template>
 
-<script setup>
-//
-</script>
+<style scoped>
+.q-page {
+  overflow-x: clip;
+}
+
+.main {
+  margin-top: 2rem;
+}
+</style>
