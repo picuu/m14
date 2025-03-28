@@ -1,3 +1,3 @@
-import useApi from './useApi'
+import useUsers from './useUsers'
 
-export { useApi }
+export { useUsers }

@@ -1,16 +1,19 @@
 <script setup>
-import { useApi } from '../composables'
+import { useUsers } from '../composables'
 
-const { data, getData } = useApi()
+const { users, getUsers } = useUsers()
 
-const apiPage = Math.round(Math.random() * 5)
+const queryParams = {
+  page: Math.round(Math.random() * 5),
+  limit: 20,
+}
 
-getData(`/user?page=${apiPage}&limit=20`)
+getUsers(queryParams)
 </script>
 
 <template>
-  <header v-if="data.data">
-    <q-avatar v-for="user in data.data" :key="user.id">
+  <header v-if="users.data">
+    <q-avatar v-for="user in users.data" :key="user.id">
       <img :src="user.picture" class="avatar-img" />
     </q-avatar>
   </header>
