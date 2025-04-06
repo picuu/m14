@@ -1,5 +1,5 @@
 <script setup>
-import { StoriesHeader, PostsList } from 'components'
+import { StoriesHeader, PostsList, MenuFooter } from 'components'
 </script>
 
 <template>
@@ -9,6 +9,8 @@ import { StoriesHeader, PostsList } from 'components'
     <div class="main">
       <PostsList />
     </div>
+
+    <MenuFooter />
   </q-page>
 </template>
 
