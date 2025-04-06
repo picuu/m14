@@ -1,12 +1,12 @@
 <script setup>
-import { StoriesHeader } from 'components'
+import { PostsList } from 'components'
 </script>
 
 <template>
   <q-page class="q-page">
-    <StoriesHeader />
-
-    <div class="main"></div>
+    <div class="main">
+      <PostsList />
+    </div>
   </q-page>
 </template>
 
@@ -16,6 +16,10 @@ import { StoriesHeader } from 'components'
 }
 
 .main {
-  margin-top: 2rem;
+  /* margin-top: 0.5rem; */
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  /* padding: 1rem; */
 }
 </style>
