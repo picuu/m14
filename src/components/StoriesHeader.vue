@@ -27,8 +27,8 @@ getUsers(queryParams)
 header {
   display: flex;
   gap: 1.25rem;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid rgba(0 0 0 / 0.25);
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255 255 255 / 0.25);
   overflow-x: scroll;
   scrollbar-width: thin;
 }
@@ -41,12 +41,12 @@ header {
 .q-avatar::before {
   content: '';
   position: absolute;
-  top: -2.5px;
-  left: -2.5px;
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   background: linear-gradient(
-    200deg,
+    195deg,
     rgba(118, 56, 250, 1) 0%,
     rgba(211, 0, 197, 1) 25%,
     rgba(255, 0, 105, 1) 50%,
@@ -58,7 +58,7 @@ header {
 }
 
 .avatar-img {
-  border: 2.5px solid #fff;
+  border: 2.5px solid var(--q-dark);
 }
 
 .loader {

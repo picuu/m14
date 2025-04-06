@@ -1,9 +1,11 @@
 <script setup>
-import { PostsList } from 'components'
+import { StoriesHeader, PostsList } from 'components'
 </script>
 
 <template>
   <q-page class="q-page">
+    <StoriesHeader />
+
     <div class="main">
       <PostsList />
     </div>
