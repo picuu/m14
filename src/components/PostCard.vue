@@ -1,16 +1,28 @@
 <script setup>
-const { username, avatar, picture, likes, description } = defineProps({
-  username: String,
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const { id, name, avatar, picture, likes, description } = defineProps({
+  id: String,
+  name: String,
   avatar: String,
   picture: String,
   likes: Number,
   description: String,
 })
+
+const username = computed(() => name.toLowerCase())
+
+const router = useRouter()
+
+const handleClick = () => {
+  router.push(`/user/${id}`)
+}
 </script>
 
 <template>
   <q-card class="post" flat>
-    <q-item class="header">
+    <q-item class="header" clickable @click="handleClick">
       <q-item-section avatar>
         <q-avatar>
           <img :src="avatar" />
@@ -37,13 +49,11 @@ const { username, avatar, picture, likes, description } = defineProps({
         <q-icon name="bookmark_border" size="md" class="action-icon" />
       </q-card-section>
 
-      <q-card-section class="post-footer-text post-likes"> {{ likes }} likes </q-card-section>
+      <q-card-section class="post-footer-text post-likes">{{ likes }} likes</q-card-section>
 
-      <q-card-section class="post-footer-text post-description">
-        {{ description }}
-      </q-card-section>
+      <q-card-section class="post-footer-text post-description">{{ description }}</q-card-section>
 
-      <q-card-section class="post-footer-text post-see-comments"> See all comments </q-card-section>
+      <q-card-section class="post-footer-text post-see-comments">See all comments</q-card-section>
     </q-card-section>
   </q-card>
 </template>

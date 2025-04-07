@@ -6,9 +6,9 @@ import { MenuFooter } from 'components'
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
       <router-view />
-
-      <MenuFooter />
     </q-page-container>
+
+    <MenuFooter />
   </q-layout>
 </template>
 

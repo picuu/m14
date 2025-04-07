@@ -31,7 +31,8 @@ watch(apiPosts, (newPosts) => {
     <PostCard
       v-for="post in posts"
       :key="post.id"
-      :username="post.owner.firstName"
+      :id="post.owner.id"
+      :name="post.owner.firstName"
       :avatar="post.owner.picture"
       :picture="post.image"
       :likes="post.likes"
