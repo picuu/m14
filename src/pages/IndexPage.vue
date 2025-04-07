@@ -1,5 +1,5 @@
 <script setup>
-import { StoriesHeader, PostsList, MenuFooter } from 'components'
+import { StoriesHeader, PostsList } from 'components'
 </script>
 
 <template>
@@ -9,8 +9,6 @@ import { StoriesHeader, PostsList, MenuFooter } from 'components'
     <div class="main">
       <PostsList />
     </div>
-
-    <MenuFooter />
   </q-page>
 </template>
 
@@ -20,10 +18,7 @@ import { StoriesHeader, PostsList, MenuFooter } from 'components'
 }
 
 .main {
-  /* margin-top: 0.5rem; */
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: stretch;
-  /* padding: 1rem; */
 }
 </style>

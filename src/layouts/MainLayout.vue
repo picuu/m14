@@ -1,3 +1,17 @@
+<script setup>
+import { MenuFooter } from 'components'
+</script>
+
+<template>
+  <q-layout view="lHh Lpr lFf">
+    <q-page-container>
+      <router-view />
+
+      <MenuFooter />
+    </q-page-container>
+  </q-layout>
+</template>
+
 <!-- <script setup>
 import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
@@ -79,13 +93,3 @@ function toggleLeftDrawer() {
     </q-page-container>
   </q-layout>
 </template> -->
-
-<script setup></script>
-
-<template>
-  <q-layout view="lHh Lpr lFf">
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
-</template>
