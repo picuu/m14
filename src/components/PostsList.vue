@@ -3,6 +3,8 @@ import { ref, watch } from 'vue'
 import { PostCard, PostSkeleton } from 'components'
 import { usePosts } from '../composables'
 
+let isFirstRender = true
+
 const posts = ref([])
 const { posts: apiPosts, getPosts } = usePosts()
 
@@ -11,14 +13,19 @@ const queryParams = {
   limit: 5,
 }
 
-getPosts(queryParams)
-
 const onLoad = (_, done) => {
-  setTimeout(() => {
+  let waitTime = 1000
+
+  if (isFirstRender) {
+    waitTime = 0
+    isFirstRender = false
+  }
+
+  setTimeout(async () => {
     queryParams.page = Math.round(Math.random() * 5)
     getPosts(queryParams)
     done()
-  }, 2000)
+  }, waitTime)
 }
 
 watch(apiPosts, (newPosts) => {

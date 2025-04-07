@@ -1,9 +1,9 @@
 import { ref } from 'vue'
 import useApi from './useApi'
 
-const userPosts = ref([])
-
 const useUserPosts = () => {
+  const userPosts = ref([])
+
   const { getData } = useApi(userPosts)
 
   const getUserPosts = (userId, queryParams) => {
