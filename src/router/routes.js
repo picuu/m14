@@ -30,6 +30,18 @@ const routes = [
   },
 
   {
+    path: '/post/:id',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/PostDetailPage.vue'),
+        props: (route) => ({ postId: route.params.id }),
+      },
+    ],
+  },
+
+  {
     path: '/messages',
     component: () => import('layouts/MainLayout.vue'),
     children: [
