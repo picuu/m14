@@ -17,9 +17,12 @@ const handleClick = (userId) => router.push(`/user/${userId}`)
 
 <template>
   <header v-if="users.data">
-    <q-avatar v-for="user in users.data" :key="user.id" @click="() => handleClick(user.id)">
-      <q-img :src="user.picture" spinner-color="white" class="avatar-img" />
-    </q-avatar>
+    <div v-for="user in users.data" :key="user.id" class="avatar-container">
+      <q-avatar @click="() => handleClick(user.id)">
+        <q-img :src="user.picture" spinner-color="white" class="avatar-img" />
+      </q-avatar>
+      <span class="avatar-username">{{ user.firstName.toLowerCase() }}</span>
+    </div>
   </header>
 
   <header v-else>
@@ -35,6 +38,22 @@ header {
   border-bottom: 1px solid rgba(255 255 255 / 0.25);
   overflow-x: scroll;
   scrollbar-width: thin;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: min-content;
+  text-wrap-mode: nowrap;
+}
+
+.avatar-username {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  opacity: 0.9;
 }
 
 .q-avatar {
