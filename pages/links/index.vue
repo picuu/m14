@@ -12,15 +12,18 @@ definePageMeta({
 const route = useRoute()
 const router = useRouter()
 
-// @ts-expect-error - the initialized value is empty
-const data = ref<PaginatedResponse<Link>>({})
-
 const queries = ref({
   page: 1,
   sort: "",
   "filter[full_link]": "",
   ...route.query
 })
+
+// @ts-expect-error - the initialized value is empty
+const data = ref<PaginatedResponse<Link>>({})
+
+await getLinks()
+let links = computed(() => data.value?.data)
 
 watch(queries, async () => {
   router.push({ query: queries.value })
@@ -33,8 +36,6 @@ async function getLinks() {
   const { data: res } = await axios.get(`/links?${qs}`)
   data.value = res
 }
-
-let links = computed(() => data.value?.data)
 </script>
 <template>
   <div>
@@ -65,7 +66,7 @@ let links = computed(() => data.value?.data)
           </tr>
         </thead>
         <tbody>
-          <tr v-for="link in links" :key="link.id">
+          <tr v-for="link in links" :key="link.short_link">
             <td>
               <a :href="link.full_link" target="_blank">
                 {{ link.full_link.replace(/^http(s?):\/\//, "") }}</a
