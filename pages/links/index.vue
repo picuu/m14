@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import axios from "axios";
 // @ts-expect-error
 import { TailwindPagination } from "laravel-vue-pagination";
 import { useRoute, useRouter } from 'vue-router'
 import { Link, PaginatedResponse } from "~~/types";
+import { useLinks } from '../../composables/useLinks'
 
 definePageMeta({
   middleware: ["auth"],
@@ -19,22 +19,20 @@ const queries = ref({
   ...route.query
 })
 
-// @ts-expect-error - the initialized value is empty
-const data = ref<PaginatedResponse<Link>>({})
+const { data, index: getLinks, destroy } = useLinks({queries})
 
 await getLinks()
 let links = computed(() => data.value?.data)
 
-watch(queries, async () => {
+watch(queries, () => {
   router.push({ query: queries.value })
-  getLinks()
 }, { deep: true })
 
-async function getLinks() {
-  // @ts-expect-error - page is a number
-  const qs = new URLSearchParams(queries.value).toString()
-  const { data: res } = await axios.get(`/links?${qs}`)
-  data.value = res
+async function handleDelete(id: number) {
+  await destroy(id);
+  if (data.value) {
+    data.value.data = data.value?.data.filter((link) => link.id !== id);
+  }
 }
 </script>
 <template>
@@ -59,7 +57,7 @@ async function getLinks() {
             <th class="w-[10%]">Edit</th>
             <th class="w-[10%]">Trash</th>
             <th class="w-[6%] text-center">
-              <button @click="getLinks">
+              <button @click="getLinks()">
                 <IconRefresh class="w-[15px] relative top-[2px]" />
               </button>
             </th>
@@ -67,7 +65,7 @@ async function getLinks() {
         </thead>
         <tbody>
           <tr v-for="link in links" :key="link.short_link">
-            <td>
+            <td :title="`created ${useTimeAgo(link.created_at).value}`">
               <a :href="link.full_link" target="_blank">
                 {{ link.full_link.replace(/^http(s?):\/\//, "") }}</a
               >
@@ -92,7 +90,7 @@ async function getLinks() {
               /></NuxtLink>
             </td>
             <td>
-              <button><IconTrash /></button>
+              <button @click="handleDelete(link.id)"><IconTrash /></button>
             </td>
             <td></td>
           </tr>
