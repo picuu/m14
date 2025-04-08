@@ -18,6 +18,18 @@ const routes = [
   },
 
   {
+    path: '/profile',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/ProfileDetail.vue'),
+        props: () => ({ userId: '60d0fe4f5311236168a10a19' }),
+      },
+    ],
+  },
+
+  {
     path: '/messages',
     component: () => import('layouts/MainLayout.vue'),
     children: [
