@@ -23,16 +23,16 @@ watch(currentTab, (newTab) => router.push(newTab))
       <q-tab name="/explore">
         <q-icon name="explore" size="md" class="menu-icon" />
       </q-tab>
-      <q-tab name="reels">
+      <q-tab name="/reels">
         <q-icon name="movie_filter" size="md" class="menu-icon" />
       </q-tab>
-      <q-tab name="create">
+      <q-tab name="/create">
         <q-icon name="add_circle_outline" size="md" class="menu-icon" />
       </q-tab>
-      <q-tab name="messages">
+      <q-tab name="/messages">
         <q-icon name="send" size="md" class="menu-icon" />
       </q-tab>
-      <q-tab name="profile">
+      <q-tab name="/profile">
         <q-icon name="account_circle" size="md" class="menu-icon" />
       </q-tab>
     </q-tabs>
