@@ -1,47 +1,13 @@
-# "Laravel Backends for Vue.js 3" Front End Source Code
+# Pràctica 08 - CRUD amb VUE 3 i Laravel
 
-[![](https://vueschool.io/media/1b4b17d7dfaf4a708fbd160ba767b6d8/laravel-backends-for-vue-js-3-not-transparent.jpg)](https://vueschool.io/courses/laravel-backends-for-vue-js-3)
-
-This repository contains the front end source code for the course: "Laravel Backends for Vue.js 3".
-
-The main branch is the starting point for the course (the boilerplate code) and the solutions branch
-includes commits for each lesson.
-
-## Setup
-
-Make sure to install the dependencies:
+Per clonar aquesta branca del repositori cal executar la següent comanda:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+git clone --single-branch --branch vue-laravel-crud https://github.com/picuu/m14.git
 ```
 
-## Development Server
+## Com accedir a les activitats?
 
-Start the development server on http://localhost:3000
+El repositori conté una branca per cada activitat realitzada. Per accedir a les activitats, cal seleccionar la branca corresponent a l'activitat que es vol consultar.
 
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[Enllaç a la branca principal, amb l'index complert de totes les activitats](https://github.com/picuu/m14?tab=readme-ov-file#branques-per-activitat)
