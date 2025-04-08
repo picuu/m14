@@ -124,3 +124,9 @@ git clone --single-branch --branch CapoForcadaCarlosUF2 https://github.com/picuu
 ```bash
 git clone --single-branch --branch a01-quasar-investigacio https://github.com/picuu/m14.git
 ```
+
+20. **[Pràctica 08 - CRUD amb VUE 3 i Laravel](https://github.com/picuu/m14/tree/vue-laravel-crud)**
+
+```bash
+git clone --single-branch --branch vue-laravel-crud https://github.com/picuu/m14.git
+```
