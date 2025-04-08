@@ -1,7 +1,8 @@
 <script setup>
 import { computed } from 'vue'
-import { useUser, useUserPosts } from '../composables'
 import { useRouter } from 'vue-router'
+import { SecondaryHeader } from 'components'
+import { useUser, useUserPosts } from '../composables'
 
 const { userId } = defineProps({
   userId: String,
@@ -27,13 +28,7 @@ const handlePostClick = (postId) => router.push(`/post/${postId}`)
 <template>
   <q-page>
     <template v-if="'id' in user && 'data' in posts">
-      <q-header bordered class="header">
-        <q-toolbar class="header-items">
-          <q-btn class="header-item--icon" to="/" icon="arrow_back_ios_new" />
-          <q-toolbar-title class="header-item--username">{{ username }}</q-toolbar-title>
-          <q-space class="header-item-space" />
-        </q-toolbar>
-      </q-header>
+      <SecondaryHeader :title="username" />
 
       <main class="main">
         <section class="user-info">
@@ -122,26 +117,6 @@ const handlePostClick = (postId) => router.push(`/post/${postId}`)
 </template>
 
 <style lang="scss" scoped>
-.header {
-  background-color: var(--q-dark);
-}
-
-.header-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  padding: 0 1rem;
-
-  & .header-item--icon {
-    justify-self: start;
-  }
-
-  & .header-item--username {
-    font-size: 1rem;
-    text-align: center;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
