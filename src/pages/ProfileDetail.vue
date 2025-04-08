@@ -39,7 +39,7 @@ const handlePostClick = (postId) => router.push(`/post/${postId}`)
         <section class="user-info">
           <header class="user-info--header">
             <q-avatar size="88px">
-              <img :src="user.picture" :alt="user.firstName" />
+              <q-img :src="user.picture" spinner-color="white" :alt="user.firstName" />
             </q-avatar>
 
             <div class="user-header--actions">
@@ -99,7 +99,7 @@ const handlePostClick = (postId) => router.push(`/post/${postId}`)
               class="user-post"
               @click="() => handlePostClick(post.id)"
             >
-              <img :src="post.image" :alt="post.tags.join(' ')" />
+              <q-img :src="post.image" spinner-color="white" :alt="post.tags.join(' ')" ratio="1" />
             </q-card>
           </main>
 

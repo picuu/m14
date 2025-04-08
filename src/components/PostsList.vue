@@ -44,6 +44,7 @@ watch(apiPosts, (newPosts) => {
       :picture="post.image"
       :likes="post.likes"
       :description="post.text"
+      :tags="post.tags"
     />
     <template v-slot:loading>
       <PostSkeleton />

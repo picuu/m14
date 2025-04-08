@@ -14,7 +14,7 @@ getUsers(queryParams)
 <template>
   <header v-if="users.data">
     <q-avatar v-for="user in users.data" :key="user.id">
-      <img :src="user.picture" class="avatar-img" />
+      <q-img :src="user.picture" spinner-color="white" class="avatar-img" />
     </q-avatar>
   </header>
 
@@ -23,7 +23,7 @@ getUsers(queryParams)
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
   display: flex;
   gap: 1.25rem;
@@ -58,6 +58,7 @@ header {
 }
 
 .avatar-img {
+  border-radius: 999vw;
   border: 2.5px solid var(--q-dark);
 }
 

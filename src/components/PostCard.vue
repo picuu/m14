@@ -2,13 +2,14 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-const { id, name, avatar, picture, likes, description } = defineProps({
+const { id, name, avatar, picture, likes, description, tags } = defineProps({
   id: String,
   name: String,
   avatar: String,
   picture: String,
   likes: Number,
   description: String,
+  tags: Array,
 })
 
 const username = computed(() => name.toLowerCase())
@@ -25,7 +26,7 @@ const handleClick = () => {
     <q-item class="header" clickable @click="handleClick">
       <q-item-section avatar>
         <q-avatar>
-          <img :src="avatar" />
+          <q-img :src="avatar" spinner-color="white" />
         </q-avatar>
       </q-item-section>
 
@@ -39,7 +40,7 @@ const handleClick = () => {
     </q-item>
 
     <!-- <q-separator /> -->
-    <img :src="picture" alt="post title" />
+    <q-img :src="picture" spinner-color="white" :alt="tags.join(' ')" />
 
     <q-card-section vertical class="footer">
       <q-card-section horizontal class="post-actions">
