@@ -27,7 +27,7 @@ const handleClick = () => router.back()
 
 .header-items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   padding: 0 1rem;
 
