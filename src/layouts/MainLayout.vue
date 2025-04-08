@@ -14,7 +14,7 @@ const onResize = (size) => {
   <q-layout view="lHh Lpr lFf" class="layout">
     <MenuFooter vertical :hide="!showVerticalNav" />
 
-    <q-page-container>
+    <q-page-container :class="showVerticalNav ? 'vertical-nav' : ''">
       <router-view />
     </q-page-container>
 
@@ -24,4 +24,8 @@ const onResize = (size) => {
   </q-layout>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.vertical-nav {
+  padding-left: 72px;
+}
+</style>
