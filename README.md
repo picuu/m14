@@ -1,126 +1,47 @@
-# Repositori d'activitats i treballs del mòdul 14 - Desenvolupament d'aplicacions per entorns mòbils
+# "Laravel Backends for Vue.js 3" Front End Source Code
 
-## Com accedir a les activitats?
+[![](https://vueschool.io/media/1b4b17d7dfaf4a708fbd160ba767b6d8/laravel-backends-for-vue-js-3-not-transparent.jpg)](https://vueschool.io/courses/laravel-backends-for-vue-js-3)
 
-El repositori conté una branca per cada activitat realitzada. Per accedir a les activitats, cal seleccionar la branca corresponent a l'activitat que es vol consultar.
+This repository contains the front end source code for the course: "Laravel Backends for Vue.js 3".
 
-A continuació, es detallen les branques corresponents a cada activitat.
+The main branch is the starting point for the course (the boilerplate code) and the solutions branch
+includes commits for each lesson.
 
-## Branques per activitat
+## Setup
 
-> [!NOTE]
-> Devall del link de cada branca, es trobara la comanda a executar per clonar aquella branca del repositori
-
-1. **[AEA 1.01](https://github.com/picuu/m14/tree/escalfament-js-0)** - Escalfament JavaScript 0
+Make sure to install the dependencies:
 
 ```bash
-git clone --single-branch --branch escalfament-js-0 https://github.com/picuu/m14.git
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-2. **[AEA 1.02](https://github.com/picuu/m14/tree/escalfament-js-1-todo-list)** - Escalfament JavaScript 1 ToDo List
+## Development Server
+
+Start the development server on http://localhost:3000
 
 ```bash
-git clone --single-branch --branch escalfament-js-1-todo-list https://github.com/picuu/m14.git
+npm run dev
 ```
 
-3. **[AEA 1.03](https://github.com/picuu/m14/tree/aea-103-refactor-todo-list)** - Refactorització To Do List
+## Production
+
+Build the application for production:
 
 ```bash
-git clone --single-branch --branch aea-103-refactor-todo-list https://github.com/picuu/m14.git
+npm run build
 ```
 
-4. **[AEA 1.04](https://github.com/picuu/m14/tree/aea-104-arrays-objectes)** - Arrays i Objectes
+Locally preview production build:
 
 ```bash
-git clone --single-branch --branch aea-104-arrays-objectes https://github.com/picuu/m14.git
+npm run preview
 ```
 
-5. **[AEA 1.05](https://github.com/picuu/m14/tree/aea-105-dom)** - DOM
-
-```bash
-git clone --single-branch --branch aea-105-dom https://github.com/picuu/m14.git
-```
-
-6. **[AEA ?](https://github.com/picuu/m14/tree/cb-carlosCapo)** - Exemples de conceptes bàsics Vue
-
-```bash
-git clone --single-branch --branch cb-carlosCapo https://github.com/picuu/m14.git
-```
-
-7. **[PR 01](https://github.com/picuu/m14/tree/pr01-contact-form)** - Contact Form
-
-```bash
-git clone --single-branch --branch pr01-contact-form https://github.com/picuu/m14.git
-```
-
-8. **[PR 02](https://github.com/picuu/m14/tree/pr02-chat)** - Creació d'un xat
-
-```bash
-git clone --single-branch --branch pr02-chat https://github.com/picuu/m14.git
-```
-
-9. **[PR 03](https://github.com/picuu/m14/tree/pr03-provide-inject)** - Provide & Inject
-
-```bash
-git clone --single-branch --branch pr03-provide-inject https://github.com/picuu/m14.git
-```
-
-10. **[Activitat 03](https://github.com/picuu/m14/tree/a03-vue-router)** - Vue Router
-
-```bash
-git clone --single-branch --branch a03-vue-router https://github.com/picuu/m14.git
-```
-
-11. **[Common Vue Mistakes](https://github.com/picuu/m14/tree/vue-common-mistakes)**
-
-```bash
-git clone --single-branch --branch vue-common-mistakes https://github.com/picuu/m14.git
-```
-
-12. **[Pràctica 04](https://github.com/picuu/m14/tree/pr04-router-carlos_capo)** - Router Web
-
-```bash
-git clone --single-branch --branch pr04-router-carlos_capo https://github.com/picuu/m14.git
-```
-
-13. **[Examen 01](https://github.com/picuu/m14/tree/CapoCarlosExamen1)** - Conceptes bàsics
-
-```bash
-git clone --single-branch --branch CapoCarlosExamen1 https://github.com/picuu/m14.git
-```
-
-14. **[AEA 1.12](https://github.com/picuu/m14/tree/aea-112-composables)** - Composables
-
-```bash
-git clone --single-branch --branch aea-112-composables https://github.com/picuu/m14.git
-```
-
-15. **[AEA 03 Node](https://github.com/picuu/m14/tree/aea-03-activitat02-api-rest)** - Creació d'una API REST per al gestor de reserves
-
-```bash
-git clone --single-branch --branch aea-03-activitat02-api-rest https://github.com/picuu/m14.git
-```
-
-16. **[Pràctica 07](https://github.com/picuu/m14/tree/vue-laravel)** - Autenticació Vue + Laravel
-
-```bash
-git clone --single-branch --branch vue-laravel https://github.com/picuu/m14.git
-```
-
-17. **[Activitat repas examen](https://github.com/picuu/m14/tree/prova-examen-uf2)** - Examen 2a Convocatòria UF2
-
-```bash
-git clone --single-branch --branch prova-examen-uf2 https://github.com/picuu/m14.git
-```
-
-18. **[Examen final M14](https://github.com/picuu/m14/tree/CapoForcadaCarlosUF2)** - CapoForcadaCarlosUF2
-
-```bash
-git clone --single-branch --branch CapoForcadaCarlosUF2 https://github.com/picuu/m14.git
-```
-
-19. **[Pràctica A01 - QuasarApp: Activitat d'investigació](https://github.com/picuu/m14/tree/a01-quasar-investigacio)**
-
-```bash
-git clone --single-branch --branch a01-quasar-investigacio https://github.com/picuu/m14.git
-```
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
