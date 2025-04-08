@@ -1,39 +1,47 @@
 <script setup lang="ts">
 import axios from "axios";
+// @ts-expect-error
+import { TailwindPagination } from "laravel-vue-pagination";
+import { useRoute, useRouter } from 'vue-router'
+import { Link, PaginatedResponse } from "~~/types";
 
 definePageMeta({
   middleware: ["auth"],
 });
 
-axios.get("/links");
+const route = useRoute()
+const router = useRouter()
 
-const links = [
-  {
-    short_link: "234jlsfsf",
-    full_link: "https://vueschool.io",
-    views: 3,
-    id: 1,
-  },
-  {
-    short_link: "adfaowerw",
-    full_link: "https://google.com",
-    views: 1,
-    id: 2,
-  },
-  {
-    short_link: "234sfdjaip",
-    full_link: "https://vuejsnation.com/",
-    views: 0,
-    id: 3,
-  },
-];
+// @ts-expect-error - the initialized value is empty
+const data = ref<PaginatedResponse<Link>>({})
+
+const queries = ref({
+  page: 1,
+  sort: "",
+  "filter[full_link]": "",
+  ...route.query
+})
+
+watch(queries, async () => {
+  router.push({ query: queries.value })
+  getLinks()
+}, { deep: true })
+
+async function getLinks() {
+  // @ts-expect-error - page is a number
+  const qs = new URLSearchParams(queries.value).toString()
+  const { data: res } = await axios.get(`/links?${qs}`)
+  data.value = res
+}
+
+let links = computed(() => data.value?.data)
 </script>
 <template>
   <div>
     <nav class="flex justify-between mb-4 items-center">
       <h1 class="mb-0">My Links</h1>
       <div class="flex items-center">
-        <SearchInput modelValue="" />
+        <SearchInput v-model="queries['filter[full_link]']" />
         <NuxtLink to="/links/create" class="ml-4">
           <IconPlusCircle class="inline" /> Create New
         </NuxtLink>
@@ -44,13 +52,15 @@ const links = [
       <table class="table-fixed w-full">
         <thead>
           <tr>
-            <th class="w-[35%]">Full Link</th>
-            <th class="w-[35%]">Short Link</th>
-            <th class="w-[10%]">Views</th>
+            <TableTh v-model="queries.sort" name="full_link" class="w-[35%]">Full Link</TableTh>
+            <TableTh v-model="queries.sort" name="short_link" class="w-[35%]">Short Link</TableTh>
+            <TableTh v-model="queries.sort" name="views" class="w-[10%]">Views</TableTh>
             <th class="w-[10%]">Edit</th>
             <th class="w-[10%]">Trash</th>
             <th class="w-[6%] text-center">
-              <button><IconRefresh /></button>
+              <button @click="getLinks">
+                <IconRefresh class="w-[15px] relative top-[2px]" />
+              </button>
             </th>
           </tr>
         </thead>
@@ -87,7 +97,9 @@ const links = [
           </tr>
         </tbody>
       </table>
-      <div class="mt-5 flex justify-center"></div>
+      <div class="mt-5 flex justify-center">
+        <TailwindPagination :data="data" @pagination-change-page="queries.page = $event"/>
+      </div>
     </div>
 
     <!-- No links message for when table is empty -->
