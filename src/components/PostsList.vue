@@ -34,7 +34,7 @@ watch(apiPosts, (newPosts) => {
 </script>
 
 <template>
-  <q-infinite-scroll @load="onLoad" :offset="250">
+  <q-infinite-scroll @load="onLoad" :offset="800">
     <PostCard
       v-for="post in posts"
       :key="post.id"

@@ -2,6 +2,11 @@
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+const { vertical: isVertical } = defineProps({
+  vertical: Boolean,
+  hide: Boolean,
+})
+
 const router = useRouter()
 const currentTab = ref('/')
 
@@ -9,13 +14,14 @@ watch(currentTab, (newTab) => router.push(newTab))
 </script>
 
 <template>
-  <q-footer bordered class="menu">
+  <q-footer v-show="!hide" bordered :class="isVertical ? 'menu vertical' : 'menu'">
     <q-tabs
       no-caps
       active-color="light"
       indicator-color="transparent"
       class="text-grey-6"
       v-model="currentTab"
+      :vertical="isVertical"
     >
       <q-tab name="/">
         <q-icon name="home" size="md" class="menu-icon" />
@@ -39,12 +45,21 @@ watch(currentTab, (newTab) => router.push(newTab))
   </q-footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .menu {
   background-color: var(--q-dark);
 }
 
 .q-tab--active {
   color: #fff;
+}
+
+.q-footer.vertical {
+  top: 0;
+  left: 0;
+  width: 72px;
+  padding-top: 10vh;
+  border-top: none;
+  border-right: 1px solid rgba(255 255 255 / 0.28);
 }
 </style>

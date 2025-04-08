@@ -40,7 +40,7 @@ const handleClick = () => {
     </q-item>
 
     <!-- <q-separator /> -->
-    <q-img :src="picture" spinner-color="white" :alt="tags.join(' ')" />
+    <q-img :src="picture" spinner-color="white" :alt="tags.join(' ')" class="post-picture" />
 
     <q-card-section vertical class="footer">
       <q-card-section horizontal class="post-actions">
@@ -120,5 +120,16 @@ const handleClick = () => {
   font-weight: 300;
   opacity: 0.7;
   cursor: pointer;
+}
+
+@media screen and (width >= 480px) {
+  .post {
+    max-width: 470px;
+    margin-inline: auto;
+  }
+
+  .post-picture {
+    max-width: 470px;
+  }
 }
 </style>

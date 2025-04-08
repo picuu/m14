@@ -2,7 +2,7 @@
 
 <template>
   <div class="q-pa-md">
-    <q-card>
+    <q-card class="post">
       <q-item>
         <q-item-section avatar>
           <q-skeleton type="QAvatar" />
@@ -18,7 +18,7 @@
         </q-item-section>
       </q-item>
 
-      <q-skeleton class="post-image-skeleton" square />
+      <q-skeleton class="post-image-skeleton post-picture" square />
 
       <q-card-actions align="right" class="q-gutter-md">
         <q-skeleton type="QBtn" />
@@ -38,5 +38,16 @@
   height: auto;
   width: 100%;
   aspect-ratio: 1;
+}
+
+@media screen and (width >= 480px) {
+  .post {
+    max-width: 470px;
+    margin-inline: auto;
+  }
+
+  .post-picture {
+    max-width: 470px;
+  }
 }
 </style>
