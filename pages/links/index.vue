@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import axios from "axios";
-axios.get("/links");
+
 definePageMeta({
   middleware: ["auth"],
 });
+
+axios.get("/links");
+
 const links = [
   {
     short_link: "234jlsfsf",
@@ -52,7 +55,7 @@ const links = [
           </tr>
         </thead>
         <tbody>
-          <tr v-for="link in links">
+          <tr v-for="link in links" :key="link.id">
             <td>
               <a :href="link.full_link" target="_blank">
                 {{ link.full_link.replace(/^http(s?):\/\//, "") }}</a

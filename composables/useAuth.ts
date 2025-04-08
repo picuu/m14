@@ -2,6 +2,7 @@ import axios from "axios";
 import type { User, LoginPayload, RegisterPayload } from "@/types";
 
 const user = ref<User | null>(null);
+
 export const useAuth = () => {
   async function getUser(): Promise<User | null> {
     if (user.value) return user.value;
@@ -32,11 +33,13 @@ export const useAuth = () => {
     await axios.post("/login", payload);
     useRouter().push("/me");
   }
+
   async function logout() {
     await axios.post("/logout");
     user.value = null;
     useRouter().replace("/login");
   }
+  
   async function register(payload: RegisterPayload) {
     await axios.post("/register", payload);
     await login({
