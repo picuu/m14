@@ -118,3 +118,9 @@ git clone --single-branch --branch prova-examen-uf2 https://github.com/picuu/m14
 ```bash
 git clone --single-branch --branch CapoForcadaCarlosUF2 https://github.com/picuu/m14.git
 ```
+
+19. **[Pràctica A01 - QuasarApp: Activitat d'investigació](https://github.com/picuu/m14/tree/a01-quasar-investigacio)**
+
+```bash
+git clone --single-branch --branch a01-quasar-investigacio https://github.com/picuu/m14.git
+```
