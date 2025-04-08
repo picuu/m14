@@ -1,6 +1,8 @@
 <script setup>
-import { useUsers } from '../composables'
+import { useRouter } from 'vue-router'
+import { useUsers } from 'src/composables'
 
+const router = useRouter()
 const { users, getUsers } = useUsers()
 
 const queryParams = {
@@ -9,11 +11,13 @@ const queryParams = {
 }
 
 getUsers(queryParams)
+
+const handleClick = (userId) => router.push(`/user/${userId}`)
 </script>
 
 <template>
   <header v-if="users.data">
-    <q-avatar v-for="user in users.data" :key="user.id">
+    <q-avatar v-for="user in users.data" :key="user.id" @click="() => handleClick(user.id)">
       <q-img :src="user.picture" spinner-color="white" class="avatar-img" />
     </q-avatar>
   </header>
@@ -36,6 +40,7 @@ header {
 .q-avatar {
   width: 1.125em;
   height: 1.125em;
+  cursor: pointer;
 }
 
 .q-avatar::before {
@@ -60,6 +65,7 @@ header {
 .avatar-img {
   border-radius: 999vw;
   border: 2.5px solid var(--q-dark);
+  cursor: pointer;
 }
 
 .loader {
